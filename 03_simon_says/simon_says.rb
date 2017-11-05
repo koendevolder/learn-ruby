@@ -31,5 +31,5 @@ def titleize(text)
     #"Cat Dog Bird".split(' ') => ['Cat', 'Dog', 'Bird']
     #['Cat', 'Dog', 'Bird'].join(' ') => "Cat Dog Bird"
     #['Cat', 'Dog', 'Bird'].include? 'Dog' => true
-    text.split(' ').map! { |word| arr.include?(word) ? word : word.capitalize }.join(' ')
+    return text.split(' ').map! { |word| arr.include?(word) ? word : word.capitalize }.join(' ')
 end
