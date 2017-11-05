@@ -7,13 +7,8 @@ def shout(text)
     return text.upcase
 end
 
-def repeat(text, times=2)
-    str = []
-    while times > 0
-        str << text
-        times = times - 1
-    end
-    return str.join(' ')
+def repeat(text, times = 2)
+    return ([text] * times).join(' ')
 end
 
 def start_of_word(text, cutoff)

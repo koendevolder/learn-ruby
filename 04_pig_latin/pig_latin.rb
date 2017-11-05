@@ -29,8 +29,24 @@ def translate(text)
 
     return text.split(' ').map! { |word| translate_word(word).join('') }.join(' ')
 end
-    
-    
-# Rule 1: If a word begins with a vowel sound, add an "ay" sound to the end of the word.
-#
-# Rule 2: If a word begins with a consonant sound, move it to the end of the word, and then add an "ay" sound to the end of the word.
+
+=begin
+def translate(s)
+  vowels = ['a','e','i','o','u','y']
+  s.split.map do |word|
+    i = 0
+    while not vowel? word[i,1]
+      if ( word[i,2] == 'qu')
+        i += 2
+      else
+        i += 1
+      end
+    end
+    word[i..-1] + word[0,i] + 'ay'
+  end.join(' ')
+end
+
+def vowel? c
+  vowels.include? c
+end
+=end
